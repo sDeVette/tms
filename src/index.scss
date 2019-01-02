@@ -1,6 +1,8 @@
 body {
   margin: 0;
   padding: 0;
+  background: #fdfdfd;
+  width: 100%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -11,4 +13,12 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.content {
+  width:1200px;
+  @media (max-width: 414px){
+    width: 100%;
+  }
+  margin: 0 auto;
 }

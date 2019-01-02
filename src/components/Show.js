@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+
+import "../styles/Details.scss";
+
+import ListItem from "./ListItem"
 
 class Show extends Component {
   constructor(props){
@@ -57,15 +60,22 @@ class Show extends Component {
     const { location } = this.props;
     const { details, episodes } = this.state;
     return (
-      <div className="App">
-        <h1>{details.name}</h1>
-        <img src={details.image.medium}/>
-        <div dangerouslySetInnerHTML={{__html: details.summary}}></div>
-        <ul>
+      <div>
+        <h1 className="detail-name">{details.name}</h1>
+        <div className="flex">
+          <img className="detail-image" src={details.image.medium} alt="Show cover"/>
+          <div className="summary" dangerouslySetInnerHTML={{__html: details.summary}}></div>
+        </div>
+        {/* <ul>
           {episodes.map((episode, index) => (
             <li key={index}><Link to={location.pathname + "/" + episode.season + "x" + episode.number}>{episode.name}</Link></li>
           ))}
-        </ul>
+        </ul> */}
+        <div className="clean-list">
+          {episodes.map((episode, index) => (
+            <ListItem key={index} text={episode.name} id={episode.season + "x" + episode.number} to={location.pathname + "/" + episode.season + "x" + episode.number}/>
+          ))}
+        </div>
       </div>
     );
   }

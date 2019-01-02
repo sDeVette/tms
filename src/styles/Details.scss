@@ -1,0 +1,30 @@
+.flex {
+  display: flex;
+  @media (max-width: 414px){
+    flex-direction: column;
+  }
+}
+
+.detail-name {
+  @media (max-width: 414px){
+    padding-left:8px;
+  }
+}
+
+.detail-image {
+  @media (max-width: 414px){
+    width:100%;
+    height: auto;
+  }
+}
+
+.summary {
+  padding: 0px 16px;
+}
+
+.clean-list {
+  @media (max-width: 414px){
+    padding: 16px;
+  }
+}
+

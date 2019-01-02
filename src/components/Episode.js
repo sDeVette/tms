@@ -41,10 +41,12 @@ class Episode extends Component {
   render() {
     const { details } = this.state;
     return (
-      <div className="Episode">
-        <h1>{details.name}</h1>
-        <img src={details.image.medium}/>
-        <div dangerouslySetInnerHTML={{__html: details.summary}}></div>
+      <div>
+        <h1 className="detail-name">{details.name}</h1>
+        <div className="flex">
+          <img className="detail-image" src={details.image.medium} alt="Episode cover"/>
+          <div className="summary" dangerouslySetInnerHTML={{__html: details.summary}}></div>
+        </div>
       </div>
     );
   }
